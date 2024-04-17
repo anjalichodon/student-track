@@ -1,0 +1,72 @@
+{% extends 'staff/staffindex.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="/edit_student_post/{{ data.id }}" method="post"><table width="200" border="2" class="table table-bordered">
+    {% csrf_token %}
+  <tr>
+    <th scope="row">Name</th>
+    <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" value="{{ data.name }}" /></td>
+  </tr>
+  <tr>
+    <th scope="row">Place</th>
+    <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" value="{{ data.place }}" /></td>
+  </tr>
+  <tr>
+    <th scope="row">Post</th>
+    <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" value="{{ data.post }}" /></td>
+  </tr>
+  <tr>
+    <th scope="row">Pin</th>
+    <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" value="{{ data.pin }}" /></td>
+  </tr>
+  <tr>
+    <th scope="row">class</th>
+    <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" value="{{ data.clas }}" /></td>
+  </tr>
+  <tr>
+    <th scope="row">Division</th>
+    <td><label for="textfield6"></label>
+      <input type="text" name="textfield6" id="textfield6" value="{{ data.division }}" /></td>
+  </tr>
+  <tr>
+    <th scope="row">Gender</th>
+    <td><p>
+      <label>
+        <input type="radio" name="RadioGroup1"{% if data.gender == 'male' %}  value="male" checked{% endif %} id="RadioGroup1_0" />
+        male</label>
+      <br />
+      <label>
+        <input type="radio" name="RadioGroup1" value="female" {% if data.gender == 'female' %} checked {% endif %} id="RadioGroup1_1" />
+        female</label>
+      <br />
+      <label>
+        <input type="radio" name="RadioGroup1" value="other" {% if data.gender == 'other' %} checked {% endif %} id="RadioGroup1_2" />
+        other</label>
+      <br />
+    </p></td>
+  </tr>
+  <tr>
+    <th scope="row">Date of Birth</th>
+    <td><label for="textfield7"></label>
+      <input type="date" name="textfield7" id="textfield7" value="{{ data.dob }}"/></td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2" scope="row"><input type="submit" name="button" id="button" value="Submit" class="btn btn-secondary" /></td>
+    </tr>
+</table>
+</form>
+</body>
+</html>
+{% endblock %}

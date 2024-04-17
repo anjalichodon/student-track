@@ -1,0 +1,47 @@
+{% extends 'staff/staffindex.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><table width="200" border="2" class="table table-bordered">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Place</th>
+    <th scope="col">Post</th>
+    <th scope="col">Pin</th>
+    <th scope="col">Class</th>
+    <th scope="col">Division</th>
+    <th scope="col">gender</th>
+    <th scope="col">dob</th>
+    <th scope="col">&nbsp;</th>
+    <th scope="col">&nbsp;</th>
+
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+    <td>&nbsp;{{ i.name }}</td>
+    <td>&nbsp;{{ i.place }}</td>
+    <td>&nbsp;{{ i.post }}</td>
+    <td>&nbsp;{{ i.pin }}</td>
+    <td>&nbsp;{{ i.clas }}</td>
+    <td>&nbsp;{{ i.division }}</td>
+    <td>&nbsp;{{ i.gender }}</td>
+    <td>&nbsp;{{ i.dob }}</td>
+    <td><a href="/edit_student/{{ i.id }}#hom" class="btn btn-secondary">Edit</a><br>
+        <a href="/delete_student/{{ i.id }}" class="btn btn-secondary">delete</a></td>
+    <td><a href="/add_student_performance/{{ i.id }}#hom" class="btn btn-secondary">Student performance</a><br>
+        <a href="/add_attendence/{{ i.id }}#hom" class="btn btn-secondary">attendence</a></td>
+  </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
+{% endblock %}

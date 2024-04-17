@@ -1,0 +1,54 @@
+{% extends 'staff/staffindex.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><table width="200" border="2" class="table table-bordered">
+
+  <tr>
+    <th scope="row">Name</th>
+    <td>{{ data.name }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Place</th>
+    <td>{{ data.place }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Post</th>
+    <td>{{ data.post }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Pin</th>
+    <td>{{ data.pin }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Qualification</th>
+    <td>{{ data.qualification }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Experience</th>
+    <td>{{ data.experience}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Email</th>
+    <td>{{ data.email }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Gender</th>
+    <td>{{ data.gender }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Phone</th>
+    <td>{{ data.phone }}</td>
+  </tr>
+
+</table>
+
+</body>
+</html>
+{% endblock %}

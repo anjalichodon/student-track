@@ -1,0 +1,46 @@
+{% extends 'parent/parentindex.html' %}
+{% block body %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><table width="200" border="2" class="table table-bordered">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Place</th>
+    <th scope="col">Post</th>
+    <th scope="col">Pin</th>
+    <th scope="col">Class</th>
+    <th scope="col">Division</th>
+    <th scope="col">gender</th>
+    <th scope="col">Date of birth</th>
+    <th scope="col">&nbsp;</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+    <td>&nbsp;{{ i.STUDENT.name }}</td>
+    <td>&nbsp;{{ i.STUDENT.place }}</td>
+    <td>&nbsp;{{ i.STUDENT.post }}</td>
+    <td>&nbsp;{{ i.STUDENT.pin }}</td>
+    <td>&nbsp;{{ i.STUDENT.clas }}</td>
+    <td>&nbsp;{{ i.STUDENT.division }}</td>
+    <td>&nbsp;{{ i.STUDENT.gender }}</td>
+    <td>&nbsp;{{ i.STUDENT.dob }}</td>
+    <td><a href="/view_student_work/{{ i.id }}#hom" class="btn btn-secondary">view student work</a><br>
+        <a href="/student_performance/{{ i.id }}#hom" class="btn btn-secondary">student performance</a><br>
+        <a href="/student_attendence/{{ i.id }}#hom" class="btn btn-secondary">student attendence</a><br>
+        <a href="/student_bus/{{ i.id }}#hom" class="btn btn-secondary">bus</a></td>
+  </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="/add_expert_post" method="post"><table width="200" border="2" class="table table-borderd">
+    {% csrf_token %}
+  <tr>
+    <th scope="row">Name</th>
+    <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" required /></td>
+  </tr>
+  <tr>
+    <th scope="row">Qualification</th>
+    <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">Specialised</th>
+    <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" required /></td>
+  </tr>
+  <tr>
+    <th scope="row">Experience</th>
+    <td><label for="textfield4"></label>
+      <input type="number" name="textfield4" id="textfield4" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">Email</th>
+    <td><label for="textfield5"></label>
+      <input type="email" name="textfield5" id="textfield5" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">Phone</th>
+    <td><label for="textfield6"></label>
+      <input type="number" name="textfield6" id="textfield6" required/></td>
+  </tr>
+  <tr>
+    <td colspan="2" scope="row"  align="center"><input type="submit" name="button" id="button" value="Submit" class="btn btn-secondary" /></td>
+    </tr>
+</table>
+</form>
+</body>
+</html>
+{% endblock %}
